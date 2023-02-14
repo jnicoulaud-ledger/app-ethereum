@@ -124,17 +124,17 @@ void handleProvideErc20TokenInformation(uint8_t p1,
     PRINTF("Provisioning currentItemIndex %d\n", tmpCtx.transactionContext.currentItemIndex);
 
     if (dataLength < 1) {
-        PRINTF("EXIT 01 %d", dataLength);
+        PRINTF("EXIT 01 %d\n", dataLength);
         THROW(0x6A80);
     }
     tickerLength = workBuffer[offset++];
     dataLength--;
     if ((tickerLength + 1) >= sizeof(token->ticker)) {
-        PRINTF("EXIT 02");
+        PRINTF("EXIT 02\n");
         THROW(0x6A80);
     }
     if (dataLength < tickerLength + 20 + 4 + 4) {
-        PRINTF("EXIT 03");
+        PRINTF("EXIT 03\n");
         THROW(0x6A80);
     }
     cx_hash_sha256(workBuffer + offset, tickerLength + 20 + 4 + 4, hash, 32);
@@ -151,7 +151,7 @@ void handleProvideErc20TokenInformation(uint8_t p1,
     dataLength -= 4;
     chainId = U4BE(workBuffer, offset);
     if ((chainConfig->chainId != ETHEREUM_MAINNET_CHAINID) && (chainConfig->chainId != chainId)) {
-        PRINTF("EXIT 04");
+        PRINTF("EXIT 04\n");
         PRINTF("ChainId token mismatch: %d vs %d\n", chainConfig->chainId, chainId);
         THROW(0x6A80);
     }
@@ -205,7 +205,7 @@ void handleProvideErc20TokenInformation(uint8_t p1,
                          workBuffer + offset,
                          dataLength)) {
 #ifndef HAVE_BYPASS_SIGNATURES
-        PRINTF("EXIT 05");
+        PRINTF("EXIT 05\n");
         PRINTF("Invalid token signature\n");
         THROW(0x6A80);
 #endif
