@@ -48,6 +48,38 @@ def test_provide_erc20_token_goerli_with_t(cmd):
     except:
         raise
 
+
+def test_provide_erc20_token_goerli_valid_signature(cmd):
+    erc20_info = ERC20Information(
+        erc20_ticker=b"USDC".hex(),
+        addr="0x79542cc915c2a19D1B00409C8B79E8E9E3bB4Bdc",
+        nb_decimals=6,
+        chainID=5,
+        sign="30440220426f264508cc02682f8d216c3d6358d3d3b170714668c43a39528a1c83d30c9502203dae50943c13f537d98fcef343bb9a18314f4fb172938d96de5e6945529b3494"
+    )
+
+    # Test if return 9000
+    try:
+        cmd.provide_erc20_token_information(info=erc20_info)
+    except:
+        raise
+
+
+def test_provide_erc20_token_goerli_with_t_valid_signature(cmd):
+    erc20_info = ERC20Information(
+        erc20_ticker=b"tUSDC".hex(),
+        addr="0x79542cc915c2a19D1B00409C8B79E8E9E3bB4Bdc",
+        nb_decimals=6,
+        chainID=5,
+        sign="30440220426f264508cc02682f8d216c3d6358d3d3b170714668c43a39528a1c83d30c9502203dae50943c13f537d98fcef343bb9a18314f4fb172938d96de5e6945529b3494"
+    )
+
+    # Test if return 9000
+    try:
+        cmd.provide_erc20_token_information(info=erc20_info)
+    except:
+        raise
+
 def test_provide_erc20_token_error(cmd):
     erc20_info = ERC20Information(
         erc20_ticker="5a5258",

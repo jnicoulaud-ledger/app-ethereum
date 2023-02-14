@@ -130,7 +130,7 @@ void handleProvideErc20TokenInformation(uint8_t p1,
     tickerLength = workBuffer[offset++];
     dataLength--;
     if ((tickerLength + 1) >= sizeof(token->ticker)) {
-        PRINTF("EXIT 02\n");
+        PRINTF("EXIT 02%s\n");
         THROW(0x6A80);
     }
     if (dataLength < tickerLength + 20 + 4 + 4) {
