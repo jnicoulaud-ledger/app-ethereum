@@ -131,11 +131,11 @@ void handleProvideErc20TokenInformation(uint8_t p1,
     dataLength--;
     if ((tickerLength + 1) >= sizeof(token->ticker)) {
         PRINTF("EXIT 02");
-       THROW(0x6A80);
+        THROW(0x6A80);
     }
     if (dataLength < tickerLength + 20 + 4 + 4) {
-           PRINTF("EXIT 03");
-      THROW(0x6A80);
+        PRINTF("EXIT 03");
+        THROW(0x6A80);
     }
     cx_hash_sha256(workBuffer + offset, tickerLength + 20 + 4 + 4, hash, 32);
     memmove(token->ticker, workBuffer + offset, tickerLength);
