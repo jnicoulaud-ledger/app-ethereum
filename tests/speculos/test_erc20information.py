@@ -55,7 +55,7 @@ def test_provide_erc20_token_goerli_valid_signature(cmd):
         addr="0x79542cc915c2a19D1B00409C8B79E8E9E3bB4Bdc",
         nb_decimals=6,
         chainID=5,
-        sign="30440220426f264508cc02682f8d216c3d6358d3d3b170714668c43a39528a1c83d30c9502203dae50943c13f537d98fcef343bb9a18314f4fb172938d96de5e6945529b3494"
+        sign="3045022100fde9f713cb999780a504b8eda31fe0195930935d8b0ad836e183b5c56b5e342d02202c15a0d1ad00b0dacae588524cf4db145934e10c8ba0e89da366e1793f723f70"
     )
 
     # Test if return 9000
@@ -71,7 +71,7 @@ def test_provide_erc20_token_goerli_with_t_valid_signature(cmd):
         addr="0x79542cc915c2a19D1B00409C8B79E8E9E3bB4Bdc",
         nb_decimals=6,
         chainID=5,
-        sign="30440220426f264508cc02682f8d216c3d6358d3d3b170714668c43a39528a1c83d30c9502203dae50943c13f537d98fcef343bb9a18314f4fb172938d96de5e6945529b3494"
+        sign="3045022100fde9f713cb999780a504b8eda31fe0195930935d8b0ad836e183b5c56b5e342d02202c15a0d1ad00b0dacae588524cf4db145934e10c8ba0e89da366e1793f723f70"
     )
 
     # Test if return 9000
