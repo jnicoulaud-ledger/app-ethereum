@@ -19,7 +19,7 @@ def test_provide_erc20_token(cmd):
 
 def test_provide_erc20_token_goerli(cmd):
     erc20_info = ERC20Information(
-        erc20_ticker="USDC",
+        erc20_ticker=b"USDC".hex(),
         addr="0x79542cc915c2a19D1B00409C8B79E8E9E3bB4Bdc",
         nb_decimals=6,
         chainID=5,
